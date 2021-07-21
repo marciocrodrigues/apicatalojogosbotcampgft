@@ -32,6 +32,7 @@ namespace ApiCatalogoJogos.Controllers.V1
         /// </summary>
         /// <returns></returns>
         [SwaggerResponse(statusCode: 200, description: "Listar todos jogos", type: typeof(List<JogoViewModel>))]
+        [SwaggerResponse(statusCode: 500, description: "Ocorreu um erro durante sua solicitação, por favor, tente novamente mais tarde.")]
         [HttpGet]
         public async Task<ActionResult<List<JogoViewModel>>> Obter(
             [FromQuery, Range(1, int.MaxValue)] int pagina = 1,
@@ -51,6 +52,7 @@ namespace ApiCatalogoJogos.Controllers.V1
         /// <param name="idJogo"></param>
         /// <returns></returns>
         [SwaggerResponse(statusCode: 200, description: "Lista o jogo pelo identificador", type: typeof(JogoViewModel))]
+        [SwaggerResponse(statusCode: 500, description: "Ocorreu um erro durante sua solicitação, por favor, tente novamente mais tarde.")]
         [HttpGet("{idJogo:guid}")]
         public async Task<ActionResult<List<JogoViewModel>>> Obter([FromRoute]Guid idJogo)
         {
@@ -69,6 +71,7 @@ namespace ApiCatalogoJogos.Controllers.V1
         /// <returns></returns>
         [SwaggerResponse(statusCode: 200, description: "Jogo cadastro com sucesso", type: typeof(JogoViewModel))]
         [SwaggerResponse(statusCode: 422, description: "Já existe um jogo com este nome para produtora")]
+        [SwaggerResponse(statusCode: 500, description: "Ocorreu um erro durante sua solicitação, por favor, tente novamente mais tarde.")]
         [HttpPost]
         public async Task<ActionResult<JogoViewModel>> InserirJogo([FromBody]JogoInputModel jogoInputModel)
         {
@@ -92,6 +95,7 @@ namespace ApiCatalogoJogos.Controllers.V1
         /// <returns></returns>
         [SwaggerResponse( statusCode: 200, description: "Jogo atualizado com sucesso.")]
         [SwaggerResponse(statusCode: 404, description: "Não existe este jogo")]
+        [SwaggerResponse(statusCode: 500, description: "Ocorreu um erro durante sua solicitação, por favor, tente novamente mais tarde.")]
         [HttpPut("{idJogo:guid}")]
         public async Task<ActionResult> AtualizarJogo([FromRoute]Guid idJogo, [FromBody]JogoInputModel jogoInputModel)
         {
@@ -115,6 +119,7 @@ namespace ApiCatalogoJogos.Controllers.V1
         /// <returns></returns>
         [SwaggerResponse(statusCode: 200, description: "Preço do jogo atualizado com sucesso.")]
         [SwaggerResponse(statusCode: 404, description: "Não existe este jogo")]
+        [SwaggerResponse(statusCode: 500, description: "Ocorreu um erro durante sua solicitação, por favor, tente novamente mais tarde.")]
         [HttpPatch("{idJogo:guid/preco/{preco:double}}")]
         public async Task<ActionResult> AtualizarJogo([FromRoute] Guid idJogo, [FromRoute]double preco)
         {
@@ -137,6 +142,7 @@ namespace ApiCatalogoJogos.Controllers.V1
         /// <returns></returns>
         [SwaggerResponse(statusCode: 200, description: "Jogo removido com sucesso")]
         [SwaggerResponse(statusCode: 404, description: "Não existe este jogo")]
+        [SwaggerResponse(statusCode: 500, description: "Ocorreu um erro durante sua solicitação, por favor, tente novamente mais tarde.")]
         [HttpDelete("{idJogo:guid}")]
         public async Task<ActionResult> ApagarJogo([FromRoute] Guid idJogo)
         {
