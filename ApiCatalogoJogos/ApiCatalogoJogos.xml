@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiCatalogoJogos</name>
+    </assembly>
+    <members>
+        <member name="T:ApiCatalogoJogos.Controllers.V1.JogosController">
+            <summary>
+            Controller para ações relacionadas a jogos
+            </summary>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.JogosController.Obter(System.Int32,System.Int32)">
+            <summary>
+            Lista todos os jogos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.JogosController.Obter(System.Guid)">
+            <summary>
+            Busca o jogo pelo identificador
+            </summary>
+            <param name="idJogo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.JogosController.InserirJogo(ApiCatalogoJogos.InputModel.JogoInputModel)">
+            <summary>
+            Cadastra um novo jogo
+            </summary>
+            <param name="jogoInputModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.JogosController.AtualizarJogo(System.Guid,ApiCatalogoJogos.InputModel.JogoInputModel)">
+            <summary>
+            Atualiza os dados de um jogo
+            </summary>
+            <param name="idJogo"></param>
+            <param name="jogoInputModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.JogosController.AtualizarJogo(System.Guid,System.Double)">
+            <summary>
+            Altera o preço de um jogo
+            </summary>
+            <param name="idJogo"></param>
+            <param name="preco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.JogosController.ApagarJogo(System.Guid)">
+            <summary>
+            Apaga um jogo da base de dados
+            </summary>
+            <param name="idJogo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ApiCatalogoJogos.InputModel.JogoInputModel">
+            <summary>
+            Model para cadastro de jogo
+            </summary>
+        </member>
+        <member name="P:ApiCatalogoJogos.InputModel.JogoInputModel.Nome">
+            <summary>
+            Nome jogo
+            </summary>
+        </member>
+        <member name="P:ApiCatalogoJogos.InputModel.JogoInputModel.Produtora">
+            <summary>
+            Produtora criadora do jogo
+            </summary>
+        </member>
+        <member name="P:ApiCatalogoJogos.InputModel.JogoInputModel.Preco">
+            <summary>
+            Preco do jogo
+            </summary>
+        </member>
+        <member name="T:ApiCatalogoJogos.ViewModel.JogoViewModel">
+            <summary>
+            Model de dados para retorno
+            </summary>
+        </member>
+        <member name="P:ApiCatalogoJogos.ViewModel.JogoViewModel.Id">
+            <summary>
+            Identificador do jogo
+            </summary>
+        </member>
+        <member name="P:ApiCatalogoJogos.ViewModel.JogoViewModel.Nome">
+            <summary>
+            Nome do jogo
+            </summary>
+        </member>
+        <member name="P:ApiCatalogoJogos.ViewModel.JogoViewModel.Produtora">
+            <summary>
+            Produtora criadora do jogo
+            </summary>
+        </member>
+        <member name="P:ApiCatalogoJogos.ViewModel.JogoViewModel.Preco">
+            <summary>
+            Preco do jogo
+            </summary>
+        </member>
+    </members>
+</doc>
